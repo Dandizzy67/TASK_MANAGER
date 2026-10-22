@@ -34,11 +34,3 @@ const startServer = async () => {
 };
 
 startServer();
-
-// aderinsoladaniel433_db_user
-
-// QV4jy1gi4WcQcLqJ
-
-// mongodb+srv://aderinsoladaniel433_db_user:QV4jy1gi4WcQcLqJ@cluster0.jnjvho7.mongodb.net/
-
-// cors: cross origin resources sharing
