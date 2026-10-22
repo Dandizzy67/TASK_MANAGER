@@ -8,7 +8,7 @@ const app = express(); // was to start up the server in express
 
 const PORT = process.env.PORT || 6741;
 
-//CORS: ONLY the client url
+//CORS: ONLY the client url address my call this api
 app.use(
   cors({
     origin: process.env.CLIENT_URL || "http://localhost:5173/",
