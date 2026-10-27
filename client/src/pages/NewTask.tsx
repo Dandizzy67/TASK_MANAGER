@@ -1,13 +1,28 @@
 import PageHeader from "../components/PageHeader";
 import TaskForm from "../components/TaskForm";
+import type { TaskInput } from "../types";
+import { createTask } from "../api";
+import { useNavigate } from "react-router-dom";
 
-const NewTask = () => {
+const emptyTask: TaskInput = { title: "", description: "", tag: "" };
+
+const NewTasks = () => {
+  const navigate = useNavigate();
+  //called by TaskForm when the user click "Done"
+  const handleCreate = async (values: TaskInput) => {
+    await createTask(values);
+    navigate("/tasks");
+  };
   return (
     <main className="max-w-360 mx-auto px-5 md:px-42.5 py-10 md:py-16.25 flex flex-col items-start gap-10.75">
-      <PageHeader />
-      <TaskForm />
+      <PageHeader title="New Task" />
+      <TaskForm
+        initialValues={emptyTask}
+        submitLabel="Done"
+        onSubmit={handleCreate}
+      />
     </main>
   );
 };
 
-export default NewTask;
+export default NewTasks;

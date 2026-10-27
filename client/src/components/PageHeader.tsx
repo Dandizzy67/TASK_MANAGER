@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa6";
 
-const PageHeader = () => (
+const PageHeader = ({ title }: { title: string }) => (
   <Link to="/tasks" className="flex items-center gap-2">
     <FaChevronLeft className="text-3xl md:text-[50px] text-[#292929]" />
     <h1 className="text-[#292929] font-medium text-3xl md:text-[50px]">
-      New Task
+      {title}
     </h1>
   </Link>
 );
